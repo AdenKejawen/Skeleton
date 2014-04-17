@@ -6,6 +6,7 @@
     <parameters>
         <parameter key="adenkejawen.listener.activity_log.class">Aden\Kejawen\Bundle\Listener\ActivityLogListener</parameter>
         <parameter key="adenkejawen.provider.logger.class">Aden\Kejawen\Bundle\Provider\LoggerProvider</parameter>
+        <parameter key="adenkejawen.manager.user_manager.class">Aden\Kejawen\Bundle\Manager\UserManager</parameter>
     </parameters>
     <services>
         <service id="adenkejawen.listener.activity_log" class="%adenkejawen.listener.activity_log.class%">
@@ -13,6 +14,13 @@
         </service>
         <service id="adenkejawen.provider.logger" class="%adenkejawen.provider.logger.class%">
             <argument type="service" id="service_container" />
+        </service>
+        <service id="adenkejawen.manager.user_manager" class="%adenkejawen.manager.user_manager.class%">
+            <argument type="service" id="security.encoder_factory" />
+            <argument type="service" id="fos_user.util.username_canonicalizer" />
+            <argument type="service" id="fos_user.util.email_canonicalizer" />
+            <argument type="service" id="fos_user.entity_manager" />
+            <argument>%fos_user.model.user.class%</argument>
         </service>
     </services>
 </container>

@@ -8,6 +8,8 @@ namespace Aden\Kejawen\Bundle\Entity;
 
 interface ProfileInterface
 {
+    public function getUser();
+    
     public function getFullName();
 
     public function getGender();

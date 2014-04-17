@@ -1,16 +1,26 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of ProfileManager
+ * @author Aden Kejawen <surya.kejawen@gmail.com>
  *
- * @author adenkejawen
- */
-class ProfileManager {
-    //put your code here
+ * This file is part of Aden Kejawen Bundle
+ **/
+namespace Aden\Kejawen\Bundle\Manager;
+
+use \Doctrine\Common\Persistence\ObjectManager;
+use \FOS\UserBundle\Doctrine\UserManager as BaseUserManager;
+use \FOS\UserBundle\Util\CanonicalizerInterface;
+use \FOS\UserBundle\Model\UserInterface;
+use \Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
+
+class UserManager extends BaseUserManager
+{
+    public function __construct(EncoderFactoryInterface $encoderFactory, CanonicalizerInterface $usernameCanonicalizer, CanonicalizerInterface $emailCanonicalizer, ObjectManager $om, $class)
+    {
+        parent::__construct($encoderFactory, $usernameCanonicalizer, $emailCanonicalizer, $om, $class);
+    }
+
+    public function getProfile(UserInterface $user)
+    {
+        $this->objectManager->getRepository('AdenKejawenBundle:Profile')->find($user->getId());
+    }
 }

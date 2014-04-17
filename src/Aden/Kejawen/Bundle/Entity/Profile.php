@@ -20,6 +20,12 @@ class Profile implements ProfileInterface
      * @ORM\GeneratedValue(strategy = "AUTO")
      **/
     protected $id;
+    
+    /**
+     * @ORM\OneToOne(targetEntity = "Aden\Kejawen\Bundle\Entity\User")
+     * @ORM\JoinColumn(name = "user_id", referencedColumnName = "id")
+     **/
+    protected $user;
 
     /**
      * @ORM\Column(name = "gender", type = "smallint")
@@ -50,9 +56,11 @@ class Profile implements ProfileInterface
     const GENDER_MALE       = 1;
     const GENDER_FEMALE     = 2;
     
+    private static $GENDER  = array(self::GENDER_UNDEFINED, self::GENDER_MALE, self::GENDER_FEMALE);
+    
     public function __construct()
     {
-        $this->gender   = 0;
+        $this->gender   = self::GENDER_UNDEFINED;
     }
     
     public function getFullName()
@@ -79,9 +87,17 @@ class Profile implements ProfileInterface
     {
         return $this->photo;
     }
+    
+    public function getUser()
+    {
+        return $this->user;
+    }
 
     public function setGender($gender)
     {
+        if (! in_array($gender, self::$GENDER)) {
+            throw \Exception(sprintf("unsupported gender %s", $gender));
+        }
         $this->gender = $gender;
         
         return $this;
@@ -89,7 +105,7 @@ class Profile implements ProfileInterface
 
     public function setFullName($fullName)
     {
-        $this->fullName = $fullName;
+        $this->fullName = strtoupper($fullName);
         
         return $this;
     }
@@ -103,7 +119,7 @@ class Profile implements ProfileInterface
 
     public function setAddress($address)
     {
-        $this->address = $address;
+        $this->address =strtoupper($address);
         
         return $this;
     }
@@ -113,5 +129,10 @@ class Profile implements ProfileInterface
         $this->photo = $photo;
         
         return $this;
+    }
+    
+    public function setUser(User $user)
+    {
+        $this->user = $user;
     }
 }

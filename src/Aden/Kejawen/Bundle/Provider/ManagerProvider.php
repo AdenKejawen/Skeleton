@@ -9,7 +9,7 @@ namespace Aden\Kejawen\Bundle\Provider;
 
 use \Symfony\Component\DependencyInjection\ContainerInterface;
 
-class ModelProvider
+class ManagerProvider
 {
     private $container;
 
@@ -25,7 +25,7 @@ class ModelProvider
         $name = strtolower($name);
 
         try {
-            return $this->container->get($this->container->getParameter('initial').'.model.'.strtolower($name));
+            return $this->container->get($this->container->getParameter('initial').'.manager.'.strtolower($name));
         } catch (\Exception $e) {
             throw new \Exception("Model not found");
         }
