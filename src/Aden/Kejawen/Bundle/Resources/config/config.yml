@@ -1,0 +1,31 @@
+parameters:
+    query_cache_driver: "array"
+    date_format: "d-m-Y H:i:s"
+    home: "http://localhost/skeleton/web"
+    initial : "adenkejawen"
+
+monolog:
+    channels: [ %initial% ]
+    handlers:
+        gatotkaca:
+            type:     stream
+            path:     "%kernel.logs_dir%/%initial%.log"
+            channels: [ %initial% ]
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Aden\Kejawen\Bundle\Entity\User
+    group:
+        group_class: Aden\Kejawen\Bundle\Entity\Group
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                auto_mapping: true
+                metadata_cache_driver: "%query_cache_driver%"
+                result_cache_driver: "%query_cache_driver%"
+                query_cache_driver: "%query_cache_driver%"
+        resolve_target_entities:
+            Aden\Kejawen\Bundle\Entity\ProfileInterface: Aden\Kejawen\Bundle\Entity\Profile

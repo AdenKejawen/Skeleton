@@ -1,0 +1,2 @@
+1. Allow user to switch
+2. Permission check using routename, group and action
