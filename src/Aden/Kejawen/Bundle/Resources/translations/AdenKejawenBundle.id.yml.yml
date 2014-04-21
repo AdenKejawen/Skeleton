@@ -1,0 +1,7 @@
+form:
+    name: "Nama lengkap:"
+    birthday: "Tanggal lahir:"
+    gender: "Jenis kelamin:"
+    address: "Alamat:"
+    gender_male: "Pria"
+    gender_female: "Wanita"

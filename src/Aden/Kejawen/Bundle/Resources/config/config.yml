@@ -19,7 +19,7 @@ fos_user:
     group:
         group_class: Aden\Kejawen\Bundle\Entity\Group
     service:
-        user_manager: adenkejawen.manager.user_manager
+        user_manager: adenkejawen.manager.user
 
 doctrine:
     orm:

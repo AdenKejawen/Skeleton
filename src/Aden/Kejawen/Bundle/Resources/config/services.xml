@@ -5,17 +5,20 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
         <parameter key="adenkejawen.listener.activity_log.class">Aden\Kejawen\Bundle\Listener\ActivityLogListener</parameter>
+        <parameter key="adenkejawen.form.profile.class">Aden\Kejawen\Bundle\Form\Type\ProfileFormType</parameter>
         <parameter key="adenkejawen.provider.logger.class">Aden\Kejawen\Bundle\Provider\LoggerProvider</parameter>
-        <parameter key="adenkejawen.manager.user_manager.class">Aden\Kejawen\Bundle\Manager\UserManager</parameter>
+        <parameter key="adenkejawen.manager.user.class">Aden\Kejawen\Bundle\Manager\UserManager</parameter>
     </parameters>
     <services>
         <service id="adenkejawen.listener.activity_log" class="%adenkejawen.listener.activity_log.class%">
             <tag name="kernel.event_subscriber" />
         </service>
+        <service id="adenkejawen.form.profile" class="%adenkejawen.form.profile.class%">
+        </service>
         <service id="adenkejawen.provider.logger" class="%adenkejawen.provider.logger.class%">
             <argument type="service" id="service_container" />
         </service>
-        <service id="adenkejawen.manager.user_manager" class="%adenkejawen.manager.user_manager.class%">
+        <service id="adenkejawen.manager.user" class="%adenkejawen.manager.user.class%">
             <argument type="service" id="security.encoder_factory" />
             <argument type="service" id="fos_user.util.username_canonicalizer" />
             <argument type="service" id="fos_user.util.email_canonicalizer" />

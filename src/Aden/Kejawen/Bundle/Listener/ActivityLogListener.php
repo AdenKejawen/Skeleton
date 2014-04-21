@@ -8,7 +8,7 @@
 namespace Aden\Kejawen\Bundle\Listener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Aden\Kejawen\Bundle\AdenKejawenEvents;
+use Aden\Kejawen\Bundle\AdenKejawenConstants;
 use Aden\Kejawen\Bundle\Event\ActivityLogEvent;
 
 class ActivityLogListener implements EventSubscriberInterface
@@ -20,7 +20,7 @@ class ActivityLogListener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            AdenKejawenEvents::ACTIVITY_LOG => 'onActivityLog',
+            AdenKejawenConstants::EVENT_ACTIVITY_LOG => 'onActivityLog',
         );
     }
     
