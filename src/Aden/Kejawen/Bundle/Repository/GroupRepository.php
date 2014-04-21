@@ -7,7 +7,7 @@
 
 namespace Aden\Kejawen\Bundle\Repository;
 
-use \Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityRepository;
 
 class GroupRepository extends EntityRepository
 {

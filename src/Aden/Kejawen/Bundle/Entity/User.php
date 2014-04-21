@@ -6,8 +6,8 @@
  **/
 namespace Aden\Kejawen\Bundle\Entity;
 
-use \Doctrine\ORM\Mapping as ORM;
-use \FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass = "Aden\Kejawen\Bundle\Repository\UserRepository")

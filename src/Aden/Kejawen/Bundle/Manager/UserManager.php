@@ -6,11 +6,11 @@
  **/
 namespace Aden\Kejawen\Bundle\Manager;
 
-use \Doctrine\Common\Persistence\ObjectManager;
-use \FOS\UserBundle\Doctrine\UserManager as BaseUserManager;
-use \FOS\UserBundle\Util\CanonicalizerInterface;
-use \FOS\UserBundle\Model\UserInterface;
-use \Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+use FOS\UserBundle\Doctrine\UserManager as BaseUserManager;
+use FOS\UserBundle\Util\CanonicalizerInterface;
+use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
 class UserManager extends BaseUserManager
 {

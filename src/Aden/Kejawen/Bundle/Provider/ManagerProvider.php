@@ -7,7 +7,7 @@
 
 namespace Aden\Kejawen\Bundle\Provider;
 
-use \Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ManagerProvider
 {

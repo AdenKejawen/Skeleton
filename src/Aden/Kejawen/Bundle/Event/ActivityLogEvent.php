@@ -7,8 +7,8 @@
 
 namespace Aden\Kejawen\Bundle\Event;
 
-use \Symfony\Component\EventDispatcher\Event;
-use \Aden\Kejawen\Bundle\Provider\LoggerProvider;
+use Symfony\Component\EventDispatcher\Event;
+use Aden\Kejawen\Bundle\Provider\LoggerProvider;
 
 class ActivityLogEvent extends Event
 {

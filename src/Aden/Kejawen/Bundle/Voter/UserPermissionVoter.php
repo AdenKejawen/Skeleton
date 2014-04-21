@@ -6,10 +6,10 @@
  **/
 namespace Aden\Kejawen\Bundle\Voter;
 
-use \Symfony\Component\HttpFoundation\RequestStack;
-use \Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
-use \Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use \Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Doctrine\ORM\EntityManager;
 
 class UserPermissionVoter implements VoterInterface
 {

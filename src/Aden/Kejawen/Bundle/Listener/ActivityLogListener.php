@@ -7,9 +7,9 @@
 
 namespace Aden\Kejawen\Bundle\Listener;
 
-use \Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use \Aden\Kejawen\Bundle\AdenKejawenEvents;
-use \Aden\Kejawen\Bundle\Event\ActivityLogEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Aden\Kejawen\Bundle\AdenKejawenEvents;
+use Aden\Kejawen\Bundle\Event\ActivityLogEvent;
 
 class ActivityLogListener implements EventSubscriberInterface
 {
